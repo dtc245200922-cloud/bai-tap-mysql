@@ -24,6 +24,14 @@ ON Transactions (transaction_type, created_at);
 
 ANALYZE TABLE Transactions;
 
+-- So sánh truy vấn cũ sau khi đã có cùng index.
+EXPLAIN
+SELECT SUM(amount) AS total_deposit
+FROM Transactions
+WHERE transaction_type = 'DEPOSIT'
+  AND YEAR(created_at) = 2026
+  AND MONTH(created_at) = 6;
+
 -- 3. Kế hoạch sau tối ưu: bằng trên cột đầu, khoảng trên cột sau.
 EXPLAIN
 SELECT SUM(amount) AS total_deposit

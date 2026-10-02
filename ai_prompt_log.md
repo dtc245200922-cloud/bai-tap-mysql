@@ -1,18 +1,19 @@
-# Nhật ký sử dụng AI
+# Nhật ký tương tác AI
 
-## Trao đổi thực tế
-Người học gửi toàn bộ đề PayFlow. AI tạo bản nháp ba file này và tra cứu tài liệu MySQL về Range Optimization. Không có các lượt hỏi đáp lý thuyết riêng trước đó; không ghi prompt gợi ý của đề thành trao đổi thật.
+## Lượt 1
+Người học gửi toàn bộ yêu cầu PayFlow. AI tạo bản nháp SQL và phân tích EXPLAIN, đồng thời tra cứu tài liệu chính thức MySQL về range optimization.
 
-## Kiến thức trong bản nháp
-- SARGable: điều kiện cho phép index tìm các khóa phù hợp trực tiếp; dùng khoảng trên created_at thay vì bọc YEAR/MONTH.
-- Index kết hợp: đặt transaction_type trước để lọc bằng, created_at sau để lọc khoảng; không chỉ dựa vào cột nào có cardinality cao hơn.
-- ALL là quét bảng, range là truy cập khoảng index; rows trong EXPLAIN là ước lượng, không phải số đo thực tế.
-- Hai cột index chưa bao phủ amount. Không được coi mọi truy vấn SELECT chậm trên InnoDB là gây table lock; cần phân biệt tranh chấp tài nguyên và khóa.
+## Lượt 2
+Người học yêu cầu làm lại vì chưa đạt. AI bổ sung bộ dữ liệu demo 100.000 giao dịch, kiểm thử mốc biên/NULL và hướng dẫn chụp EXPLAIN.
 
-## Tình trạng kiểm chứng
-Chưa chạy MySQL, chưa đo tốc độ, chưa có ảnh Result Grid/EXPLAIN. Không tuyên bố đã giảm từ 45 giây xuống một thời gian cụ thể.
+## Lượt 3
+Người học cung cấp nhận xét chấm 50/100: thiếu EXPLAIN thực tế, thiếu câu vấn đáp về thứ tự xử lý và chi phí ghi index, sử dụng AI vượt giới hạn. AI xác nhận các phần còn thiếu.
 
-## Quy định của bài
-Đề giới hạn AI hỗ trợ lý thuyết, không viết toàn bộ đáp án. Đây là bản nháp AI soạn; người học cần tự hiểu, chỉnh sửa và thực hiện theo quy định giảng viên.
+## Lượt 4
+Người học yêu cầu làm lại từ đầu. AI chuẩn bị bộ tài liệu mới có ba câu vấn đáp và kiến thức mở rộng B-tree/seek/scan. Các phần này là nội dung giải thích do AI cung cấp, không phải các câu hỏi lý thuyết riêng do người học đã hỏi.
 
-Nguồn tham khảo: https://dev.mysql.com/doc/refman/8.0/en/range-optimization.html
+## Tình trạng thực hiện
+Chưa chạy MySQL trong môi trường của AI. Chưa có ảnh console hoặc số đo EXPLAIN thực tế. Người học cần tự chạy, đối chiếu và bổ sung ảnh trước khi nộp.
+
+## Phạm vi sử dụng
+Lịch sử có việc AI soạn giải pháp từ toàn bộ đề, vượt quy tắc AI của bài tập. Không thể đổi lịch sử thành chỉ hỏi lý thuyết. Bộ này là tài liệu tham khảo cho quá trình tự thực hiện lại; cần tuân thủ yêu cầu giảng viên khi nộp.

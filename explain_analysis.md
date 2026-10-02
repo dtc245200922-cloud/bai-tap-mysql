@@ -1,13 +1,17 @@
-# Phân tích EXPLAIN
+# So sánh kế hoạch thực thi
 
-Chưa chạy trên MySQL có dữ liệu thực tế; các mô tả sau là dự kiến, không phải số đo.
+YEAR/MONTH trên created_at không tạo được khoảng tìm kiếm trực tiếp bằng index B-tree thông thường. Trước index, dự kiến type=ALL, key=NULL, rows gần tổng số dòng.
 
-Trước tối ưu, bảng chỉ có khóa chính. YEAR/MONTH bọc created_at khiến điều kiện không khai thác trực tiếp khoảng của B-tree thông thường. Dự kiến type = ALL, key = NULL; rows ước lượng gần số dòng toàn bảng.
+Index (transaction_type, created_at) phục vụ điều kiện bằng rồi khoảng thời gian. Truy vấn mới dùng [2026-06-01, 2026-07-01), không bỏ sót ngày cuối tháng. Dự kiến type=range, key=idx_type_date và rows giảm khi điều kiện chọn lọc. possible_keys là ứng viên; key là lựa chọn thực tế; rows là ước lượng. ALL vẫn có thể hợp lý khi bảng nhỏ hoặc phần dữ liệu phù hợp quá lớn.
 
-Sau tối ưu, index (transaction_type, created_at) dùng điều kiện bằng rồi điều kiện khoảng. Dự kiến type = range, key = idx_type_date, rows giảm khi tháng được chọn chiếm tỷ lệ nhỏ. Optimizer vẫn có thể chọn ALL với bảng nhỏ hoặc điều kiện ít chọn lọc; không bảo đảm một kế hoạch cố định. possible_keys là index ứng viên, key là index thực sự chọn, rows là ước lượng.
+## Số đo thực tế (điền sau khi chạy MySQL)
 
-Khoảng [01/06, 01/07) giữ đúng dữ liệu tháng 6. Index chưa chứa amount nên chưa phải covering index cho SUM(amount).
+| Kế hoạch | type | possible_keys | key | rows | Extra |
+|---|---|---|---|---|---|
+| Cũ, chưa index | Chưa đo | Chưa đo | Chưa đo | Chưa đo | Chưa đo |
+| Cũ, có index | Chưa đo | Chưa đo | Chưa đo | Chưa đo | Chưa đo |
+| Mới, có index | Chưa đo | Chưa đo | Chưa đo | Chưa đo | Chưa đo |
 
-Cần chụp hai EXPLAIN và ghi type/key/rows thực tế. Chạy truy vấn đối chiếu: same_total phải bằng 1.
+Đối chiếu old_total/new_total: same_total phải bằng 1. Chưa có kết quả EXPLAIN thực tế.
 
 Nguồn: https://dev.mysql.com/doc/refman/8.0/en/range-optimization.html
