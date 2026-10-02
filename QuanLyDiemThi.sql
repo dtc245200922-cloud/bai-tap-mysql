@@ -1,0 +1,44 @@
+CREATE DATABASE QuanLyDiemThi
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
+USE QuanLyDiemThi;
+
+CREATE TABLE HocSinh (
+    MaHS VARCHAR(20) PRIMARY KEY,
+    TenHS VARCHAR(50),
+    NgaySinh DATETIME,
+    Lop VARCHAR(20),
+    GT VARCHAR(20)
+) ENGINE=InnoDB;
+
+CREATE TABLE GiaoVien (
+    MaGV VARCHAR(20) PRIMARY KEY,
+    TenGV VARCHAR(50),
+    SDT VARCHAR(10)
+) ENGINE=InnoDB;
+
+CREATE TABLE MonHoc (
+    MaMH VARCHAR(50) PRIMARY KEY,
+    TenMH VARCHAR(50),
+    MaGV VARCHAR(20),
+    CONSTRAINT FK_MonHoc_GiaoVien
+        FOREIGN KEY (MaGV) REFERENCES GiaoVien(MaGV)
+) ENGINE=InnoDB;
+
+CREATE TABLE BangDiem (
+    MaHS VARCHAR(20),
+    MaMH VARCHAR(50),
+    DiemThi INT,
+    NgayKT DATETIME,
+    PRIMARY KEY (MaHS, MaMH),
+    CONSTRAINT FK_BangDiem_HocSinh
+        FOREIGN KEY (MaHS) REFERENCES HocSinh(MaHS),
+    CONSTRAINT FK_BangDiem_MonHoc
+        FOREIGN KEY (MaMH) REFERENCES MonHoc(MaMH)
+) ENGINE=InnoDB;
+
+-- Kiểm tra các bảng và liên kết.
+SHOW TABLES;
+SHOW CREATE TABLE MonHoc;
+SHOW CREATE TABLE BangDiem;
