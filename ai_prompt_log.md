@@ -1,15 +1,18 @@
 # Nhật ký sử dụng AI
 
 ## Trao đổi thực tế
-Người học gửi toàn bộ đề thực hành FlashMart. AI tạo bản nháp script, phần giải trình và nhật ký này. Không có lượt hỏi đáp lý thuyết riêng trước đó; không ghi các prompt gợi ý của đề thành trao đổi đã diễn ra.
+Người học gửi toàn bộ đề PayFlow. AI tạo bản nháp ba file này và tra cứu tài liệu MySQL về Range Optimization. Không có các lượt hỏi đáp lý thuyết riêng trước đó; không ghi prompt gợi ý của đề thành trao đổi thật.
 
-## Nội dung AI giải thích trong bản nháp
-- INNER JOIN chỉ giữ dòng khớp; LEFT JOIN giữ mọi dòng của bảng bên trái.
-- COUNT(cột) bỏ qua NULL, còn COUNT(*) đếm tất cả dòng.
-- LEFT JOIN kết hợp IS NULL tìm các dòng không có giao dịch tương ứng.
+## Kiến thức trong bản nháp
+- SARGable: điều kiện cho phép index tìm các khóa phù hợp trực tiếp; dùng khoảng trên created_at thay vì bọc YEAR/MONTH.
+- Index kết hợp: đặt transaction_type trước để lọc bằng, created_at sau để lọc khoảng; không chỉ dựa vào cột nào có cardinality cao hơn.
+- ALL là quét bảng, range là truy cập khoảng index; rows trong EXPLAIN là ước lượng, không phải số đo thực tế.
+- Hai cột index chưa bao phủ amount. Không được coi mọi truy vấn SELECT chậm trên InnoDB là gây table lock; cần phân biệt tranh chấp tài nguyên và khóa.
 
-## Kiểm chứng
-Hai truy vấn được kiểm tra bằng SQLite trên cùng dữ liệu mẫu: Alice 2 đơn, Bob 1 đơn, Charlie 0 đơn; sản phẩm chưa bán là 103, Keyboard. Script chưa được chạy trên MySQL Workbench; cần chạy và chụp Result Grid thực tế.
+## Tình trạng kiểm chứng
+Chưa chạy MySQL, chưa đo tốc độ, chưa có ảnh Result Grid/EXPLAIN. Không tuyên bố đã giảm từ 45 giây xuống một thời gian cụ thể.
 
-## Giới hạn sử dụng
-Đề yêu cầu AI chỉ hỗ trợ lý thuyết, không viết sẵn toàn bộ đáp án. Bản nháp này được AI soạn nên người học cần tự hiểu, chỉnh sửa và tuân thủ quy định của giảng viên. Nhật ký không giả định đây là bài tự làm.
+## Quy định của bài
+Đề giới hạn AI hỗ trợ lý thuyết, không viết toàn bộ đáp án. Đây là bản nháp AI soạn; người học cần tự hiểu, chỉnh sửa và thực hiện theo quy định giảng viên.
+
+Nguồn tham khảo: https://dev.mysql.com/doc/refman/8.0/en/range-optimization.html
