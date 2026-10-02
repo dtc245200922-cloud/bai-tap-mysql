@@ -1,17 +1,17 @@
-# Nhật ký sử dụng AI
+# Nhật ký AI — 02/10/2026
 
-## Cuộc trao đổi thực tế ngày 02/10/2026
+## Trao đổi thực tế
 
-Người học gửi toàn bộ đề HealthSync trong chuỗi trao đổi chuẩn bị bài tập SQL. AI chuẩn bị script SQL, báo cáo phân tích và nhật ký này. Không có các lượt hỏi riêng về ENUM, DECIMAL hoặc ALTER TABLE trước khi tạo bộ file; không ghi các prompt chưa thực sự được gửi.
+Người học gửi toàn bộ đề AutoRide trong cuộc trao đổi chuẩn bị bài tập SQL. AI chuẩn bị ba file, không có các câu hỏi kỹ thuật tách riêng trước đó. Nhật ký không tạo thêm prompt hay kết quả kiểm thử chưa xảy ra.
 
-## Nội dung AI hỗ trợ
+## Nội dung được AI hỗ trợ
 
-- Thay Boolean bằng ENUM và thêm trigger kiểm soát vòng đời.
-- Dùng DECIMAL cho tiền cọc, phí phạt; dùng CHECK cho số tiền và lý do hủy.
-- Tạo Prescriptions với khóa ngoại RESTRICT, UNIQUE và trigger chặn kê đơn trước COMPLETED.
-- Giữ Boolean cũ trong bảng rà soát trước khi bỏ cột.
-- Thêm bước CONFIRMED vào kịch bản thành công để đúng vòng đời trong mô tả.
+1. Dùng DECIMAL(15,2), NOT NULL DEFAULT 0 cho các khoản tiền.
+2. Chọn quan hệ Rentals 1-N Inspections để hỗ trợ nhiều biên bản; ON DELETE RESTRICT bảo vệ liên kết.
+3. Dùng ENUM giới hạn giá trị trạng thái và trigger kiểm soát chuyển trạng thái.
+4. Chặn INSERT biên bản khi hợp đồng chưa ACTIVE; yêu cầu kiểm tra trước COMPLETED.
+5. Tách tiền hoàn dự kiến và khoản phải trả thêm khi phí vượt tiền cọc.
 
-## Giới hạn
+## Giới hạn và quy tắc bài
 
-Đề chỉ cho dùng AI để hỗ trợ từng phần, không yêu cầu AI viết trọn bộ SQL. Bộ file này được AI soạn toàn bộ nên chưa đáp ứng quy tắc sử dụng AI của bài. Người học cần tự rà soát, triển khai và điều chỉnh theo quy định của giảng viên. Nhật ký không khẳng định đã chạy kiểm thử hoặc người học đã tự viết mã.
+Đề giới hạn AI hỗ trợ các câu hỏi kỹ thuật từng phần. Bộ file này do AI soạn toàn bộ nên chưa đáp ứng quy tắc đó; người học cần tự triển khai, rà soát và điều chỉnh theo quy định của giảng viên. Không khẳng định người học đã tự viết hoặc chạy thành công script.
