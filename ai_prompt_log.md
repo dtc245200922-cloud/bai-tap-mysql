@@ -1,17 +1,15 @@
-# Nhật ký AI — 02/10/2026
+# Nhật ký sử dụng AI
 
 ## Trao đổi thực tế
+Người học gửi toàn bộ đề thực hành FlashMart. AI tạo bản nháp script, phần giải trình và nhật ký này. Không có lượt hỏi đáp lý thuyết riêng trước đó; không ghi các prompt gợi ý của đề thành trao đổi đã diễn ra.
 
-Người học gửi toàn bộ đề AutoRide trong cuộc trao đổi chuẩn bị bài tập SQL. AI chuẩn bị ba file, không có các câu hỏi kỹ thuật tách riêng trước đó. Nhật ký không tạo thêm prompt hay kết quả kiểm thử chưa xảy ra.
+## Nội dung AI giải thích trong bản nháp
+- INNER JOIN chỉ giữ dòng khớp; LEFT JOIN giữ mọi dòng của bảng bên trái.
+- COUNT(cột) bỏ qua NULL, còn COUNT(*) đếm tất cả dòng.
+- LEFT JOIN kết hợp IS NULL tìm các dòng không có giao dịch tương ứng.
 
-## Nội dung được AI hỗ trợ
+## Kiểm chứng
+Hai truy vấn được kiểm tra bằng SQLite trên cùng dữ liệu mẫu: Alice 2 đơn, Bob 1 đơn, Charlie 0 đơn; sản phẩm chưa bán là 103, Keyboard. Script chưa được chạy trên MySQL Workbench; cần chạy và chụp Result Grid thực tế.
 
-1. Dùng DECIMAL(15,2), NOT NULL DEFAULT 0 cho các khoản tiền.
-2. Chọn quan hệ Rentals 1-N Inspections để hỗ trợ nhiều biên bản; ON DELETE RESTRICT bảo vệ liên kết.
-3. Dùng ENUM giới hạn giá trị trạng thái và trigger kiểm soát chuyển trạng thái.
-4. Chặn INSERT biên bản khi hợp đồng chưa ACTIVE; yêu cầu kiểm tra trước COMPLETED.
-5. Tách tiền hoàn dự kiến và khoản phải trả thêm khi phí vượt tiền cọc.
-
-## Giới hạn và quy tắc bài
-
-Đề giới hạn AI hỗ trợ các câu hỏi kỹ thuật từng phần. Bộ file này do AI soạn toàn bộ nên chưa đáp ứng quy tắc đó; người học cần tự triển khai, rà soát và điều chỉnh theo quy định của giảng viên. Không khẳng định người học đã tự viết hoặc chạy thành công script.
+## Giới hạn sử dụng
+Đề yêu cầu AI chỉ hỗ trợ lý thuyết, không viết sẵn toàn bộ đáp án. Bản nháp này được AI soạn nên người học cần tự hiểu, chỉnh sửa và tuân thủ quy định của giảng viên. Nhật ký không giả định đây là bài tự làm.
