@@ -3,33 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu ngang</title>
+    <title>Bố cục HTML5 và CSS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="menu">
+    <header>
+        <h1>Monday Times</h1>
+    </header>
+
+    <nav aria-label="Điều hướng chính">
         <ul>
-            <li><a href="#">Sem 1</a>
-                <ul>
-                    <li><a href="#">Computing Fundamental</a></li>
-                    <li><a href="#">C Programming</a></li>
-                    <li><a href="#">Building Dynamic Website</a></li>
-                    <li><a href="#">MS Transact-SQL</a></li>
-                    <li><a href="#">Project</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Sem 2</a>
-                <ul>
-                    <li><a href="#">Cloud Computing</a></li>
-                    <li><a href="#">APJ - I</a></li>
-                    <li><a href="#">APJ - II</a></li>
-                    <li><a href="#">APJ - III</a></li>
-                    <li><a href="#">eProject</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Sem 3</a></li>
-            <li><a href="#">Sem 4</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#sports">Sports</a></li>
+            <li><a href="#weather">Weather</a></li>
         </ul>
-    </div>
+    </nav>
+
+    <main>
+        <section id="news">
+            <h2>News Section</h2>
+            <article>
+                <h3>News Article</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+            </article>
+            <article>
+                <h3>News Article</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+            </article>
+        </section>
+
+        <aside aria-label="Thông tin bổ sung">
+            <h2>Related Information</h2>
+            <section id="sports">
+                <h3>Sports</h3>
+                <p>Read the latest sports news and upcoming events.</p>
+            </section>
+            <section id="weather">
+                <h3>Weather</h3>
+                <p>Find local weather forecasts and daily updates.</p>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Monday Times. All rights reserved.</p>
+    </footer>
 </body>
 </html>

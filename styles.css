@@ -1,64 +1,105 @@
+/* Tính kích thước phần tử bao gồm cả padding và border. */
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
+    padding: 8px;
     font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #111;
+    background-color: white;
 }
 
-#menu {
-    height: 30px;
-    padding: 0;
-    margin: 0;
+header,
+footer {
+    padding: 10px;
+    color: white;
     background-color: black;
-    border: 1px solid #cdcdcd;
 }
 
-#menu ul,
-#menu li {
-    padding: 0;
+header h1 {
+    margin: 12px 0;
+    font-size: 32px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     margin: 0;
-}
-
-#menu li {
-    position: relative;
-    float: left;
+    padding: 18px 10px;
     list-style: none;
 }
 
-#menu li a {
-    width: 100px;
-    height: 30px;
-    display: block;
+nav a {
+    color: #111;
     text-decoration: none;
-    text-align: center;
-    line-height: 30px;
-    background-color: black;
-    color: white;
 }
 
-/* Các mục trong menu con xếp theo chiều dọc. */
-#menu ul ul li {
-    float: none;
+nav a:hover,
+nav a:focus-visible {
+    text-decoration: underline;
 }
 
-#menu ul ul li a {
-    width: 200px;
-    text-align: left;
-    padding-left: 10px;
+/* Nội dung chính bên trái, thông tin phụ bên phải. */
+main {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-#menu li a:hover {
-    background-color: red;
+main > section {
+    flex: 3;
+    min-width: 0;
+    padding: 10px;
+    background-color: #ddd;
 }
 
-/* Ẩn menu con và đặt phía dưới mục cha. */
-#menu ul ul {
-    position: absolute;
-    top: 30px;
-    left: 15px;
-    visibility: hidden;
-    z-index: 1;
+h2 {
+    margin: 10px 0 18px;
+    font-size: 24px;
 }
 
-/* Hiện menu con khi rê chuột hoặc chọn bằng bàn phím. */
-#menu li:hover > ul,
-#menu li:focus-within > ul {
-    visibility: visible;
+article {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
+
+h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+aside {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    background-color: #eee;
+}
+
+aside section {
+    margin-bottom: 20px;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+/* Chuyển thành một cột khi màn hình nhỏ. */
+@media (max-width: 650px) {
+    main {
+        flex-direction: column;
+    }
 }
