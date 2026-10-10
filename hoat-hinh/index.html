@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim Hoạt Hình</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header"><a class="logo" href="#">Phim<span>Hoạt Hình</span></a></div>
+    <div class="page">
+        <div class="head-link">
+            <a href="#content" id="all" class="active">Phim hoạt hình</a>
+            <a href="#content" id="favorites">Phim hoạt hình yêu thích</a>
+            <a href="#characters">Nhân vật hoạt hình</a>
+            <a href="#feedback">Góp ý</a>
+        </div>
+        <div class="toolbar">
+            <input type="search" id="search" placeholder="Tìm kiếm phim theo tên..." aria-label="Tìm kiếm phim">
+            <select id="sort" aria-label="Sắp xếp phim"><option value="new">Mới cập nhật</option><option value="views">Xem nhiều nhất</option></select>
+            <label class="file-label">Mở video từ máy<input type="file" id="local-file" accept="video/*"></label>
+        </div>
+        <div class="content" id="content">
+            <div class="left-content"><div id="film-list"></div><p id="empty" hidden>Không tìm thấy phim phù hợp.</p></div>
+            <div class="right-content">
+                <div class="player">
+                    <video id="video" controls playsinline preload="metadata" poster="assets/meadow.png"><source src="assets/meadow.mp4" type="video/mp4">Trình duyệt không hỗ trợ video.</video>
+                    <iframe id="youtube" hidden title="Video hoạt hình YouTube" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="title-row"><h1 id="film-title">Dạo chơi trên đồng cỏ</h1><button id="favorite" type="button" aria-pressed="false">♡ Yêu thích</button></div>
+                <p class="muted" id="film-meta"></p>
+                <p id="description"></p>
+                <div class="info" id="characters"><h2>Nhân vật hoạt hình</h2><p>Thỏ trắng, những đám mây và các nhân vật vui nhộn đưa người xem đến với thế giới hoạt hình.</p></div>
+                <div class="info" id="feedback"><h2>Góp ý</h2><form id="feedback-form"><label for="message">Nội dung góp ý</label><textarea id="message" rows="3" required placeholder="Viết góp ý của bạn..."></textarea><button type="submit">Ghi nhận góp ý</button><p id="feedback-result" role="status"></p></form></div>
+            </div>
+        </div>
+        <div class="footer">© 2026 — Phim Hoạt Hình · Bài tập HTML, CSS và JavaScript</div>
+    </div>
+</body>
+</html>
