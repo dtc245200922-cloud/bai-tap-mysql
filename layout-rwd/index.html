@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page">
+        <div class="navbar" role="navigation" aria-label="Main navigation">
+            <a class="logo" href="#home">Logo</a>
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a class="login" href="#login"><span aria-hidden="true">↪</span> Login</a>
+        </div>
+
+        <div class="row">
+            <div class="sidebar sidebar-left">
+                <a href="#home">Link</a>
+                <a href="#about">Link</a>
+                <a href="#projects">Link</a>
+            </div>
+
+            <div class="content" id="home" role="main">
+                <h1>Welcome</h1>
+                <p id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <hr>
+                <h2 id="projects">Test</h2>
+                <p>Lorem ipsum...</p>
+            </div>
+
+            <div class="sidebar sidebar-right">
+                <div class="ads">ADS</div>
+                <div class="ads">ADS</div>
+            </div>
+        </div>
+
+        <div class="footer" id="contact" role="contentinfo">Footer Text</div>
+    </div>
+</body>
+</html>
