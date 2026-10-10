@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 16px;
+    font-family: Arial, sans-serif;
+    color: #252525;
+    background-color: #f3f3f3;
+    line-height: 1.6;
+}
+
+/* Đầu trang nằm phía trên thanh điều hướng. */
+header {
+    padding: 28px 20px;
+    text-align: center;
+    background-color: #dedede;
+    border: 1px solid #aaa;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 8px 0 0;
+}
+
+/* Các liên kết điều hướng nằm trên cùng một hàng. */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    background-color: #333;
+}
+
+nav a {
+    padding: 12px 22px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: #555;
+}
+
+/* Chia nội dung thành hai cột: nội dung chính và thanh bên. */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.content {
+    min-width: 0;
+    padding: 18px;
+    background-color: #e5e5e5;
+    border: 1px solid #aaa;
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-size: 23px;
+}
+
+/* Mỗi article là một khối bài viết độc lập. */
+article {
+    margin-bottom: 16px;
+    padding: 18px;
+    border: 1px solid #bbb;
+    background-color: white;
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
+
+h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+aside {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #aaa;
+    background-color: #dedede;
+}
+
+aside ul {
+    padding-left: 20px;
+    margin: 0 0 24px;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    color: #185a9d;
+}
+
+/* Chân trang nằm dưới cả hai cột. */
+footer {
+    padding: 18px;
+    text-align: center;
+    color: white;
+    background-color: #333;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+@media (max-width: 650px) {
+    body {
+        margin: 12px auto;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        padding: 10px 14px;
+    }
+}

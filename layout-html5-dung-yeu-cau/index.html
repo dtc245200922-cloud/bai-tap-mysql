@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bố cục trang web bằng HTML5 và CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Phần đầu trang -->
+    <header>
+        <h1>MY WEBSITE</h1>
+        <p>Thiết kế bố cục trang web bằng HTML5 và CSS</p>
+    </header>
+
+    <!-- Thanh điều hướng -->
+    <nav aria-label="Điều hướng chính">
+        <a href="#home">Trang chủ</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#news">Tin tức</a>
+        <a href="#contact">Liên hệ</a>
+    </nav>
+
+    <main id="home">
+        <!-- Khu vực nội dung chính gồm các bài viết -->
+        <section class="content" id="news">
+            <h2>Nội dung chính</h2>
+            <article id="about">
+                <h3>Giới thiệu HTML5</h3>
+                <p>HTML5 cung cấp các thẻ ngữ nghĩa giúp mô tả rõ từng phần của trang web. Thẻ header dùng cho phần đầu trang, nav chứa các liên kết điều hướng và footer dùng cho phần chân trang.</p>
+                <p>Thẻ section chia nội dung thành các khu vực, article chứa một bài viết độc lập và aside chứa thông tin bổ sung liên quan đến nội dung chính.</p>
+            </article>
+            <article>
+                <h3>Định dạng bố cục bằng CSS</h3>
+                <p>CSS được sử dụng để thiết lập màu nền, phông chữ, khoảng cách và kích thước của các thành phần trên trang.</p>
+                <p>Bố cục này sử dụng CSS Grid để đặt nội dung chính và thanh bên cạnh nhau. Trên màn hình nhỏ, hai phần được xếp thành một cột để dễ đọc.</p>
+            </article>
+        </section>
+
+        <!-- Thanh bên chứa thông tin bổ sung -->
+        <aside>
+            <h2>Thông tin bổ sung</h2>
+            <h3>Chuyên mục</h3>
+            <ul>
+                <li><a href="#about">Tìm hiểu HTML5</a></li>
+                <li><a href="#news">Thiết kế bố cục</a></li>
+                <li><a href="#contact">Thông tin liên hệ</a></li>
+            </ul>
+            <h3>Ghi chú</h3>
+            <p>Trang web sử dụng đủ sáu thẻ bố cục: header, nav, section, article, aside và footer.</p>
+        </aside>
+    </main>
+
+    <!-- Phần chân trang -->
+    <footer id="contact">
+        <p>&copy; 2026 My Website</p>
+        <p>Bài tập: Tạo layout với các thẻ HTML5 và CSS</p>
+    </footer>
+</body>
+</html>
