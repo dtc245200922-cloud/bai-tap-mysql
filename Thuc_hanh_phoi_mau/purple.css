@@ -1,0 +1,4 @@
+/* Bang mau don tong tim: dam den nhat. */
+:root { --primary: #7C3AED; --secondary: #8B5CF6; --page: #A78BFA; --content: #DDD6FE; --footer: #EDE9FE; }
+/* Logo goc la anh xanh; doi hue cho phu hop tong tim. */
+body > nav a img { filter: hue-rotate(70deg); }
