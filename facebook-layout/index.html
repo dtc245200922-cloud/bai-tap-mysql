@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện Facebook giản lược</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a class="logo" href="#home" aria-label="Trang chủ Facebook">f</a>
+        <input class="search" type="search" placeholder="Tìm kiếm trên Facebook" aria-label="Tìm kiếm trên Facebook">
+        <nav class="top-nav" aria-label="Điều hướng chính">
+            <a class="active" href="#home">Trang chủ</a>
+            <a href="#friends">Bạn bè</a>
+            <a href="#groups">Nhóm</a>
+        </nav>
+        <a class="profile" href="#profile"><span class="avatar small">NH</span><span>Ngọc Hồng</span></a>
+    </header>
+
+    <aside class="sidebar left-sidebar" aria-label="Menu cá nhân">
+        <nav>
+            <a href="#profile" id="profile"><span class="avatar small">NH</span>Ngọc Hồng</a>
+            <a href="#friends"><span class="icon">👥</span>Bạn bè</a>
+            <a href="#groups"><span class="icon">💬</span>Nhóm</a>
+            <a href="#saved"><span class="icon">🔖</span>Đã lưu</a>
+            <a href="#market"><span class="icon">🛍️</span>Marketplace</a>
+            <a href="#video"><span class="icon">▶️</span>Video</a>
+            <a href="#memories"><span class="icon">🕘</span>Kỷ niệm</a>
+        </nav>
+        <hr>
+        <h2>Lối tắt của bạn</h2>
+        <a class="shortcut" href="#groups"><span class="group-icon">IT</span>Cộng đồng học lập trình</a>
+        <p class="sidebar-note">Giao diện thực hành HTML và CSS</p>
+    </aside>
+
+    <main id="home" class="feed">
+        <section class="stories" aria-label="Tin">
+            <div class="story create-story"><span class="story-symbol">+</span><strong>Tạo tin</strong></div>
+            <div class="story story-blue"><span class="avatar">MA</span><strong>Minh Anh</strong></div>
+            <div class="story story-purple"><span class="avatar">TH</span><strong>Thu Hà</strong></div>
+            <div class="story story-green"><span class="avatar">HN</span><strong>Hải Nam</strong></div>
+        </section>
+
+        <section class="card composer" aria-label="Tạo bài viết">
+            <div class="composer-top"><span class="avatar">NH</span><div class="composer-prompt">Hồng ơi, bạn đang nghĩ gì thế?</div></div>
+            <div class="composer-actions"><span>🔴 Video trực tiếp</span><span>🖼️ Ảnh/video</span><span>😊 Cảm xúc</span></div>
+        </section>
+
+        <article class="card post">
+            <header class="post-header"><span class="avatar blue">IT</span><div><h2>Cộng đồng học lập trình</h2><p>2 giờ · Công khai</p></div><span class="more" aria-label="Thông tin thêm">···</span></header>
+            <p class="post-text">Mỗi ngày học thêm một chút, mỗi ngày tiến bộ hơn một chút. Hôm nay cùng luyện tập tạo bố cục trang web bằng HTML5 và CSS nhé! 💻</p>
+            <div class="post-banner"><span>&lt; / &gt;</span><strong>HỌC LẬP TRÌNH WEB</strong><p>HTML · CSS · JavaScript</p></div>
+            <div class="post-stats"><span>👍 ❤️ 128</span><span>24 bình luận · 8 lượt chia sẻ</span></div>
+            <div class="post-actions"><span>👍 Thích</span><span>💬 Bình luận</span><span>↗ Chia sẻ</span></div>
+        </article>
+
+        <article class="card post">
+            <header class="post-header"><span class="avatar purple">MA</span><div><h2>Minh Anh</h2><p>4 giờ · Bạn bè</p></div><span class="more">···</span></header>
+            <p class="post-text">Một góc học tập nhỏ và một ngày thật nhiều năng lượng. Chúc mọi người hoàn thành tốt bài tập hôm nay! 🌿</p>
+            <div class="post-stats"><span>❤️ 56</span><span>6 bình luận</span></div>
+            <div class="post-actions"><span>👍 Thích</span><span>💬 Bình luận</span><span>↗ Chia sẻ</span></div>
+        </article>
+        <footer class="feed-footer">Bài tập giao diện Facebook giản lược — HTML5 &amp; CSS</footer>
+    </main>
+
+    <aside class="sidebar right-sidebar" aria-label="Thông tin và người liên hệ">
+        <section><h2>Thông báo</h2><div class="notice"><span class="icon">📅</span><p>Đừng quên dành thời gian ôn tập và hoàn thành bài tập hôm nay.</p></div></section>
+        <hr>
+        <section id="friends"><h2>Người liên hệ</h2><ul class="contacts"><li><span class="avatar purple">MA</span>Minh Anh<span class="online" aria-label="Đang hoạt động"></span></li><li><span class="avatar blue">TH</span>Thu Hà<span class="online" aria-label="Đang hoạt động"></span></li><li><span class="avatar green">HN</span>Hải Nam<span class="online" aria-label="Đang hoạt động"></span></li><li><span class="avatar orange">KL</span>Khánh Linh<span class="online" aria-label="Đang hoạt động"></span></li></ul></section>
+        <hr>
+        <section id="groups"><h2>Cuộc trò chuyện nhóm</h2><div class="shortcut"><span class="group-icon">IT</span>Nhóm học HTML &amp; CSS</div></section>
+    </aside>
+</body>
+</html>

@@ -1,0 +1,65 @@
+* { box-sizing: border-box; }
+:root { --header-height: 64px; --sidebar-width: 250px; }
+html { scroll-padding-top: 84px; }
+body { margin: 0; background: #f0f2f5; color: #1c1e21; font-family: Arial, sans-serif; font-size: 15px; }
+a { color: inherit; text-decoration: none; }
+/* Header luôn nằm ở đầu màn hình khi cuộn trang. */
+.header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); z-index: 10; display: flex; align-items: center; gap: 14px; padding: 0 20px; background: white; box-shadow: 0 1px 6px #0000001a; }
+.logo { display: grid; place-items: center; flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: #1877f2; color: white; font-size: 42px; font-weight: bold; overflow: hidden; padding-top: 6px; }
+.search { width: 235px; border: 0; border-radius: 24px; padding: 13px 16px; background: #f0f2f5; font: inherit; }
+.top-nav { display: flex; align-self: stretch; justify-content: center; flex: 1; gap: 8px; }
+.top-nav a { display: grid; place-items: center; padding: 0 25px; border-bottom: 3px solid transparent; color: #65676b; font-weight: bold; }
+.top-nav a:hover { background: #f0f2f5; }
+.top-nav .active { border-color: #1877f2; color: #1877f2; }
+.profile { display: flex; align-items: center; gap: 8px; font-weight: bold; white-space: nowrap; }
+.avatar { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: #d9e8ff; color: #185abc; font-size: 13px; font-weight: bold; }
+.avatar.small { width: 36px; height: 36px; }
+.purple { background: #ede0ff; color: #7544ac; }
+.green { background: #d9f1e3; color: #26744b; }
+.orange { background: #ffead6; color: #a65b17; }
+/* Hai sidebar cố định, có thể cuộn riêng khi nội dung dài. */
+.sidebar { position: fixed; top: var(--header-height); bottom: 0; width: var(--sidebar-width); padding: 20px 14px; overflow-y: auto; }
+.left-sidebar { left: 0; }
+.right-sidebar { right: 0; }
+.sidebar nav a, .shortcut { display: flex; align-items: center; gap: 12px; padding: 10px 8px; border-radius: 8px; font-weight: bold; }
+.sidebar nav a:hover, .shortcut:hover { background: #e4e6e9; }
+.icon { width: 36px; text-align: center; font-size: 25px; flex-shrink: 0; }
+.sidebar h2 { margin: 16px 8px 10px; color: #65676b; font-size: 16px; }
+hr { border: 0; border-top: 1px solid #d5d8dd; margin: 16px 8px; }
+.group-icon { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px; background: #dce8f9; color: #1877f2; }
+.sidebar-note { padding: 0 8px; color: #65676b; font-size: 12px; line-height: 1.6; }
+/* Chừa khoảng trống cho header và hai sidebar. */
+.feed { max-width: 700px; margin: 0 auto; padding: 88px 24px 30px; }
+.stories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+.story { height: 172px; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; color: white; box-shadow: 0 2px 5px #00000010; }
+.story-blue { background: linear-gradient(145deg, #4479c3, #8ab5e9); }
+.story-purple { background: linear-gradient(145deg, #7958aa, #bca3df); }
+.story-green { background: linear-gradient(145deg, #34876e, #86c6a1); }
+.create-story { background: white; color: #1c1e21; align-items: center; justify-content: center; gap: 18px; }
+.story-symbol { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #1877f2; color: white; font-size: 32px; }
+.story strong { font-size: 13px; }
+.card { background: white; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 1px 3px #00000015; }
+.composer { padding: 16px; }
+.composer-top { display: flex; align-items: center; gap: 10px; }
+.composer-prompt { flex: 1; background: #f0f2f5; border-radius: 24px; padding: 13px 16px; color: #65676b; }
+.composer-actions { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 12px; border-top: 1px solid #e4e6eb; margin-top: 14px; padding-top: 14px; color: #65676b; font-size: 13px; font-weight: bold; }
+.post-header { display: flex; align-items: center; gap: 10px; padding: 16px 16px 0; }
+.post-header h2 { font-size: 15px; margin: 0 0 5px; }
+.post-header p { color: #65676b; font-size: 12px; margin: 0; }
+.more { margin-left: auto; color: #65676b; font-size: 24px; }
+.post-text { line-height: 1.6; margin: 14px 16px; }
+.post-banner { min-height: 245px; padding: 30px 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #e8f1ff; color: #20599a; text-align: center; }
+.post-banner > span { font-size: 52px; font-weight: bold; margin-bottom: 20px; }
+.post-banner strong { font-size: 26px; }
+.post-banner p { letter-spacing: 2px; font-size: 14px; }
+.post-stats { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; margin: 0 16px; padding: 14px 0; color: #65676b; font-size: 13px; border-bottom: 1px solid #e4e6eb; }
+.post-actions { display: flex; justify-content: space-around; padding: 14px 8px; color: #65676b; font-weight: bold; font-size: 14px; }
+.notice { display: flex; align-items: flex-start; gap: 8px; padding: 8px; }
+.notice p { font-size: 13px; line-height: 1.6; margin: 0; }
+.contacts { list-style: none; padding: 0; margin: 0; }
+.contacts li { display: flex; align-items: center; gap: 10px; padding: 10px 8px; }
+.online { width: 8px; height: 8px; border-radius: 50%; background: #31a24c; margin-left: auto; }
+.feed-footer { text-align: center; color: #65676b; font-size: 12px; padding: 12px; }
+@media (max-width: 1200px) { :root { --sidebar-width: 210px; } .feed { margin-left: 210px; margin-right: 210px; max-width: none; } .search { width: 190px; } .top-nav a { padding: 0 16px; } }
+@media (max-width: 1000px) { .right-sidebar { display: none; } .feed { margin-right: 0; max-width: 700px; } .profile > span:last-child { display: none; } .search { width: 170px; } }
+@media (max-width: 720px) { .left-sidebar { display: none; } .feed { margin: 0 auto; padding: 80px 12px 20px; } .header { padding: 0 12px; gap: 8px; } .search { display: none; } .top-nav { gap: 0; } .top-nav a { font-size: 12px; padding: 0 10px; } .story { height: 145px; padding: 10px; } .composer-prompt { font-size: 13px; } .post-banner strong { font-size: 22px; } }
